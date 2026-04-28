@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos — Hangar Fitness</title>
+  <meta name="description" content="Eventos especiales en Hangar Fitness. Competencias, clases abiertas, lanzamientos y más. ¡Sumáte a la experiencia!" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ── EVENTOS — estilos específicos ── */
+
+    /* Grid de eventos */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Tarjeta de evento */
+    .event-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,214,0,0.18);
+      border-top: 4px solid var(--yellow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.32s cubic-bezier(0.16,1,0.3,1),
+                  border-color 0.25s ease,
+                  box-shadow 0.32s ease;
+    }
+    .event-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 1px rgba(255,214,0,0.25),
+                  0 24px 48px rgba(255,214,0,0.08);
+    }
+
+    /* Flyer / imagen del evento */
+    .event-flyer {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      background: var(--dark-3);
+    }
+
+    /* Placeholder cuando no hay imagen */
+    .event-flyer-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--dark-3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      border-bottom: 1px dashed rgba(255,214,0,0.18);
+    }
+    .event-flyer-placeholder .efp-icon {
+      font-size: 3.5rem;
+      color: rgba(255,214,0,0.2);
+    }
+    .event-flyer-placeholder .efp-text {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.4em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+
+    /* Badges de estado */
+    .event-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.3rem 0.85rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .event-status--open     { background: rgba(0,200,100,0.18); color: #00c864; border: 1px solid rgba(0,200,100,0.3); }
+    .event-status--soon     { background: rgba(255,214,0,0.18); color: var(--yellow); border: 1px solid rgba(255,214,0,0.35); }
+    .event-status--full     { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.1); }
+    .event-status--upcoming { background: rgba(100,160,255,0.15); color: #64a0ff; border: 1px solid rgba(100,160,255,0.3); }
+
+    /* Cuerpo */
+    .event-body {
+      padding: 1.5rem 1.75rem 2rem;
+    }
+
+    /* Fila de fecha / vuelo */
+    .event-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .event-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+    .event-meta-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.62);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .event-meta-value {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--yellow);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    /* Separador punteado */
+    .event-divider {
+      border: none;
+      border-top: 1px dashed rgba(255,214,0,0.15);
+      margin: 1.1rem 0;
+    }
+
+    /* Nombre del evento */
+    .event-name {
+      font-size: 1.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.65rem;
+      color: var(--white);
+    }
+    .event-name span { color: var(--yellow); }
+
+    /* Descripción */
+    .event-desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.75;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Info pills */
+    .event-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .event-pill {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.75rem;
+      border: 1px solid rgba(255,214,0,0.28);
+      color: rgba(255,214,0,0.75);
+      font-weight: 600;
+    }
+
+    /* CTA del evento */
+    .event-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.8rem 1.6rem;
+      background: var(--yellow);
+      color: var(--black);
+      clip-path: polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+      transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+      width: 100%;
+      justify-content: center;
+    }
+    .event-cta:hover {
+      background: var(--white);
+      box-shadow: 0 0 22px rgba(255,214,0,0.28);
+      transform: translateY(-1px);
+    }
+    .event-cta--outline {
+      background: transparent;
+      color: var(--yellow);
+      border: 2px solid rgba(255,214,0,0.4);
+    }
+    .event-cta--outline:hover {
+      background: rgba(255,214,0,0.08);
+      border-color: var(--yellow);
+    }
+
+    /* ── PRÓXIMOS EVENTOS — banner strip ── */
+    .events-strip {
+      background: var(--yellow);
+      overflow: hidden;
+      padding: 0.85rem 0;
+    }
+    .events-strip-inner {
+      display: flex;
+      gap: 4rem;
+      animation: stripScroll 22s linear infinite;
+      white-space: nowrap;
+    }
+    .events-strip-item {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .events-strip-sep {
+      color: rgba(0,0,0,0.3);
+    }
+    @keyframes stripScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── COUNTER DOWN (visual estático) ── */
+    .countdown-bar {
+      background: var(--dark-3);
+      border: 1px solid rgba(255,214,0,0.15);
+      border-left: 4px solid var(--yellow);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .countdown-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .countdown-units {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .countdown-num {
+      font-family: var(--mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1;
+      text-shadow: 0 0 20px rgba(255,214,0,0.3);
+    }
+    .countdown-unit-label {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .events-grid { grid-template-columns: 1fr; }
+      .event-body  { padding: 1.25rem 1.25rem 1.5rem; }
+      .event-name  { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-icon">✈</span>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Hangar Fitness</span>
+      <span class="nav-brand-tag">Gral. Roca · RN</span>
+    </div>
+  </a>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="quienes-somos.html">Tripulación</a></li>
+    <li><a href="planes.html">Clases</a></li>
+    <li><a href="eventos.html" class="active">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+    <li><a href="ubicacion.html">Ubicación</a></li>
+    <li><a href="contacto.html" class="nav-cta">Check-in ✈</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Eventos</span>
+    </div>
+    <span class="section-label">&#9992; Vuelos especiales programados</span>
+    <h1 class="section-title">Eventos<br><span class="text-yellow">especiales</span></h1>
+    <div class="deco-line"></div>
+    <p class="section-sub">Competencias, clases abiertas y experiencias únicas. Sumáte a los eventos que elevan el nivel del Hangar.</p>
+  </div>
+  <div class="page-hero-deco">EVT</div>
+</section>
+
+<!-- ===== TICKER STRIP ===== -->
+<div class="events-strip" aria-hidden="true">
+  <div class="events-strip-inner">
+    <!-- Duplicado para loop continuo -->
+    <span class="events-strip-item">&#9992; Próximos eventos</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">Inscripciones abiertas</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">Hangar Fitness · Gral. Roca</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">&#9992; Próximos eventos</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">Inscripciones abiertas</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">Hangar Fitness · Gral. Roca</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">&#9992; Próximos eventos</span>
+    <span class="events-strip-sep">///</span>
+    <span class="events-strip-item">Inscripciones abiertas</span>
+    <span class="events-strip-sep">///</span>
+  </div>
+</div>
+
+<!-- ===== EVENTOS ===== -->
+<section class="section section--dark">
+  <div class="container">
+
+    <span class="section-label">&#9992; Agenda de vuelos especiales</span>
+    <h2 class="section-title">Eventos<br><span class="text-yellow">próximos</span></h2>
+    <div class="deco-line"></div>
+    <p class="section-sub mb-3">Cada evento es una oportunidad de ir más lejos. Reservá tu lugar antes de que se llene el hangar.</p>
+
+    <div class="events-grid">
+
+      <!-- ══ EVENTO 1 (placeholder — se completa con flyer e info) ══ -->
+      <div class="event-card">
+
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&h=450&q=80" alt="Evento especial de fitness en Hangar Fitness" class="event-flyer" loading="lazy" />
+
+        <span class="event-status event-status--open">Inscripciones abiertas</span>
+
+        <div class="event-body">
+
+          <div class="event-meta">
+            <div class="event-meta-item">
+              <span class="event-meta-label">Vuelo</span>
+              <span class="event-meta-value">HG-EV01</span>
+            </div>
+            <div class="event-meta-item">
+              <span class="event-meta-label">Fecha</span>
+              <span class="event-meta-value">— / — / 2026</span>
+            </div>
+            <div class="event-meta-item">
+              <span class="event-meta-label">Horario</span>
+              <span class="event-meta-value">—:— hs</span>
+            </div>
+          </div>
+
+          <hr class="event-divider" />
+
+          <h2 class="event-name">Nombre del<br><span>Evento 1</span></h2>
+          <p class="event-desc">
+            Descripción del evento próximamente. Pasá los detalles y los actualizo aquí.
+          </p>
+
+          <div class="event-pills">
+            <span class="event-pill">Categoría</span>
+            <span class="event-pill">Nivel</span>
+            <span class="event-pill">Lugar</span>
+          </div>
+
+          <a href="contacto.html" class="event-cta">&#9992; &nbsp;Reservar lugar</a>
+
+        </div>
+      </div>
+
+      <!-- ══ EVENTO 2 (placeholder — se completa con flyer e info) ══ -->
+      <div class="event-card">
+
+        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=800&h=450&q=80" alt="Clase grupal evento especial en Hangar Fitness" class="event-flyer" loading="lazy" />
+
+        <span class="event-status event-status--soon">Últimos lugares</span>
+
+        <div class="event-body">
+
+          <div class="event-meta">
+            <div class="event-meta-item">
+              <span class="event-meta-label">Vuelo</span>
+              <span class="event-meta-value">HG-EV02</span>
+            </div>
+            <div class="event-meta-item">
+              <span class="event-meta-label">Fecha</span>
+              <span class="event-meta-value">— / — / 2026</span>
+            </div>
+            <div class="event-meta-item">
+              <span class="event-meta-label">Horario</span>
+              <span class="event-meta-value">—:— hs</span>
+            </div>
+          </div>
+
+          <hr class="event-divider" />
+
+          <h2 class="event-name">Nombre del<br><span>Evento 2</span></h2>
+          <p class="event-desc">
+            Descripción del evento próximamente. Pasá los detalles y los actualizo aquí.
+          </p>
+
+          <div class="event-pills">
+            <span class="event-pill">Categoría</span>
+            <span class="event-pill">Nivel</span>
+            <span class="event-pill">Lugar</span>
+          </div>
+
+          <a href="contacto.html" class="event-cta">&#9992; &nbsp;Reservar lugar</a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <div class="container">
+    <span class="section-label">&#9992; ¿Querés organizar un evento?</span>
+    <h2 class="section-title mb-2">¿Tenés una idea?<br>Hablemos.</h2>
+    <p class="section-sub mb-3" style="margin:0 auto 2.5rem; text-align:center;">
+      Si querés ser parte de los próximos eventos o tenés una propuesta, contactanos. El hangar está abierto.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="contacto.html" class="btn btn-dark">&#9992; &nbsp;Contactar ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-brand-icon">✈</span>
+        <div class="footer-brand-name">Hangar Fitness</div>
+        <span class="footer-brand-tag">Primer Gimnasio Temático · Argentina</span>
+        <p class="footer-desc">
+          Donde el deporte y la aviación se fusionan en una experiencia única. Entrenamos cuerpo, mente y espíritu con la disciplina de un piloto de élite.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          <a href="#" class="social-link" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Vuelos</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Tripulación</a></li>
+          <li><a href="planes.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="galeria.html">Bitácora</a></li>
+          <li><a href="ubicacion.html">Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Horarios</div>
+        <ul class="footer-links">
+          <li><a href="#">Lun–Vie: 06:00–23:00</a></li>
+          <li><a href="#">Sáb: 07:00–21:00</a></li>
+          <li><a href="#">Dom: 09:00–18:00</a></li>
+          <li><a href="#">Feriados: 09:00–14:00</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Zona de llegadas</div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📍</span>
+          <span class="fi-text">San Martín 456<br>Gral. Roca, Río Negro</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📞</span>
+          <span class="fi-text">+54 298 4XX-XXXX</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">✉</span>
+          <span class="fi-text">info@hangarfitness.ar</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2024 Hangar Fitness. Todos los derechos reservados.</span>
+      <span class="footer-code">VUELO HG-001 · ROC · RN ✈</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

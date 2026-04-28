@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clases — Hangar Fitness</title>
+  <meta name="description" content="Conocé todos los tipos de clases disponibles en Hangar Fitness. Spinning, CrossFit, Pilates, Boxeo, Yoga, Funcional, HIIT y Musculación." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-icon">✈</span>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Hangar Fitness</span>
+      <span class="nav-brand-tag">Gral. Roca · RN</span>
+    </div>
+  </a>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="quienes-somos.html">Tripulación</a></li>
+    <li><a href="planes.html" class="active">Clases</a></li>
+    <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+    <li><a href="ubicacion.html">Ubicación</a></li>
+    <li><a href="contacto.html" class="nav-cta">Check-in ✈</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Clases</span>
+    </div>
+    <span class="section-label">&#9992; Rutas de vuelo disponibles</span>
+    <h1 class="section-title">Tipos de<br><span class="text-yellow">clases</span></h1>
+    <div class="deco-line"></div>
+    <p class="section-sub">Cada clase es un vuelo diferente. Elegí el que más se adapta a tu nivel y objetivos.</p>
+  </div>
+  <div class="page-hero-deco">FLY</div>
+</section>
+
+<!-- ===== CLASES — DESCRIPCIÓN ===== -->
+<style>
+  .clase-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(255,214,0,0.15);
+    padding: 2rem;
+    transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .clase-card:hover {
+    border-color: rgba(255,214,0,0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(255,214,0,0.08);
+  }
+  .clase-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+  .clase-name {
+    font-family: var(--font); font-weight: 700; font-size: 1.2rem;
+    color: var(--yellow); margin-bottom: .75rem;
+    text-transform: uppercase; letter-spacing: .03em;
+  }
+  .clase-desc {
+    font-size: .95rem; color: rgba(255,255,255,.72);
+    line-height: 1.8; margin-bottom: 1.25rem; font-weight: 500;
+  }
+  .clase-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .clase-tag {
+    font-family: var(--mono); font-size: .72rem;
+    letter-spacing: .12em; text-transform: uppercase;
+    padding: .28rem .75rem;
+    border: 1px solid rgba(255,214,0,.3);
+    color: rgba(255,214,0,.85); font-weight: 600;
+  }
+</style>
+<section class="section">
+  <div class="container">
+    <span class="section-label">&#9992; Disciplinas disponibles</span>
+    <h2 class="section-title">Nuestras <span class="text-yellow">clases</span></h2>
+    <div class="deco-line"></div>
+    <p class="section-sub" style="margin-bottom:3rem;">Cada clase diseñada para que despegues. Conocé todos los detalles y elegí la que más se adapta a tus objetivos.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.75rem;">
+
+      <div class="clase-card">
+        <span class="clase-icon">🪂</span>
+        <div class="clase-name">Bungee Fitness</div>
+        <p class="clase-desc">Entrenamiento suspendido en arnés elástico que desafía la gravedad. Combinás cardio, fuerza y equilibrio en un ambiente de mucha diversión. Disponible en nivel <strong style="color:var(--yellow);">A (avanzado)</strong> y <strong style="color:var(--yellow);">P (principiante)</strong>, para que cada uno empiece desde su punto.</p>
+        <div class="clase-tags">
+          <span class="clase-tag">Todos los niveles</span>
+          <span class="clase-tag">Cardio + Fuerza</span>
+          <span class="clase-tag">Alta diversión</span>
+        </div>
+      </div>
+
+      <div class="clase-card">
+        <span class="clase-icon">💪</span>
+        <div class="clase-name">Funcional · GAP · Power</div>
+        <p class="clase-desc">Tres variantes de circuito para trabajar el cuerpo completo. <strong style="color:var(--yellow);">Funcional</strong> trabaja movimientos naturales. <strong style="color:var(--yellow);">GAP</strong> focaliza en glúteos, abdomen y piernas. <strong style="color:var(--yellow);">Power</strong> es el nivel más intenso para quienes ya tienen base.</p>
+        <div class="clase-tags">
+          <span class="clase-tag">Inicial a Avanzado</span>
+          <span class="clase-tag">Fuerza + Resistencia</span>
+          <span class="clase-tag">Cuerpo completo</span>
+        </div>
+      </div>
+
+      <div class="clase-card">
+        <span class="clase-icon">🎭</span>
+        <div class="clase-name">Pilates Aéreo</div>
+        <p class="clase-desc">Pilates clásico combinado con una tela aérea suspendida del techo. Mejora la flexibilidad, corrige la postura y fortalece el core sin impacto articular. Ideal para todas las edades, especialmente para quienes tienen molestias de espalda o cuello.</p>
+        <div class="clase-tags">
+          <span class="clase-tag">Todas las edades</span>
+          <span class="clase-tag">Flexibilidad</span>
+          <span class="clase-tag">Sin impacto articular</span>
+        </div>
+      </div>
+
+      <div class="clase-card">
+        <span class="clase-icon">🎵</span>
+        <div class="clase-name">Zumba · Fight Do · Powerjump</div>
+        <p class="clase-desc">Tres propuestas de cardio con mucho ritmo. <strong style="color:var(--yellow);">Zumba</strong> es baile latino de alta energía. <strong style="color:var(--yellow);">Fight Do</strong> combina elementos de artes marciales con música. <strong style="color:var(--yellow);">Powerjump</strong> usa un mini-trampolín de bajo impacto para el sistema cardiovascular.</p>
+        <div class="clase-tags">
+          <span class="clase-tag">Todos los niveles</span>
+          <span class="clase-tag">Cardio intenso</span>
+          <span class="clase-tag">Quema calorías</span>
+        </div>
+      </div>
+
+      <div class="clase-card">
+        <span class="clase-icon">👟</span>
+        <div class="clase-name">Step</div>
+        <p class="clase-desc">Coreografías con plataforma elevada al ritmo de la música. Trabaja principalmente piernas y glúteos, mejora la coordinación y el equilibrio. Fácil de adaptar a distintos ritmos e intensidades, ideal para quienes recién empiezan.</p>
+        <div class="clase-tags">
+          <span class="clase-tag">Iniciantes y más</span>
+          <span class="clase-tag">Piernas y glúteos</span>
+          <span class="clase-tag">Coordinación</span>
+        </div>
+      </div>
+
+      <div class="clase-card">
+        <span class="clase-icon">🚴</span>
+        <div class="clase-name">Cycling Indoor</div>
+        <p class="clase-desc">Bicicleta fija en sala techada con ambiente inmersivo y música de alta energía. Sesiones de alta intensidad que trabajan el sistema cardiovascular y los músculos de piernas. Ideal para mejorar la resistencia y perder peso de forma efectiva.</p>
+        <div class="clase-tags">
+          <span class="clase-tag">Todos los niveles</span>
+          <span class="clase-tag">Cardio intenso</span>
+          <span class="clase-tag">Pérdida de peso</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-3" style="text-align:center;">
+      <a href="contacto.html" class="btn btn-primary">&#9992; &nbsp;Consultá horarios y reservá tu lugar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO ===== -->
+<section class="section section--dark">
+  <div class="container">
+    <span class="section-label">&#9992; Manual de cabina</span>
+    <h2 class="section-title mb-3">¿Por qué <span class="text-yellow">Hangar Fitness</span>?</h2>
+
+    <div class="three-col">
+      <div class="vm-card">
+        <div class="vm-icon">🎯</div>
+        <span class="vm-label">Instructores certificados</span>
+        <p class="vm-text">Cada vuelo está comandado por un instructor con certificación internacional y experiencia demostrada en su disciplina.</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">✈</div>
+        <span class="vm-label">Experiencia única</span>
+        <p class="vm-text">No hay otro gimnasio temático aeroportuario en Argentina. Cada clase es una inmersión total en la cultura de la aviación.</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">🏆</div>
+        <span class="vm-label">Reserva anticipada</span>
+        <p class="vm-text">Reservá tu lugar con 24hs de anticipación por WhatsApp o en recepción. Los vuelos más populares se completan rápido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container" style="max-width:800px;">
+    <span class="section-label">&#9992; Preguntas de pre-vuelo</span>
+    <h2 class="section-title mb-3">FAQ — Preguntas <span class="text-yellow">frecuentes</span></h2>
+
+    <div class="fi-list">
+      <div class="fi-item">
+        <div class="fi-step-num">Q</div>
+        <div>
+          <div class="fi-title">¿Las clases necesitan reserva?</div>
+          <div class="fi-desc">Sí, recomendamos reservar con 24hs de anticipación por WhatsApp o en recepción. Los vuelos más demandados se completan rápido.</div>
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fi-step-num">Q</div>
+        <div>
+          <div class="fi-title">¿Necesito experiencia previa?</div>
+          <div class="fi-desc">Cada clase indica su nivel (Inicial, Intermedio, Avanzado). Las clases de nivel Inicial son perfectas para quienes empiezan desde cero.</div>
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fi-step-num">Q</div>
+        <div>
+          <div class="fi-title">¿Existen planes familiares o corporativos?</div>
+          <div class="fi-desc">Sí. Tenemos planes para grupos de 3 o más pasajeros del mismo hogar y planes corporativos para empresas. Contactanos para un presupuesto personalizado.</div>
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fi-step-num">Q</div>
+        <div>
+          <div class="fi-title">¿Qué debo llevar a cada clase?</div>
+          <div class="fi-desc">Ropa deportiva, zapatillas adecuadas y una botella de agua. Según la clase, el Hangar provee el equipamiento necesario (guantes de boxeo, colchonetas, etc.).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <div class="container">
+    <span class="section-label">&#9992; Abordaje disponible</span>
+    <h2 class="section-title mb-2">¿Listo para despegar?</h2>
+    <p class="section-sub mb-3" style="margin:0 auto 2.5rem;text-align:center;">
+      Elegí tu clase y contactanos para reservar tu lugar a bordo.
+    </p>
+    <a href="contacto.html" class="btn btn-dark">&#9992; &nbsp;Reservar ahora</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-brand-icon">✈</span>
+        <div class="footer-brand-name">Hangar Fitness</div>
+        <span class="footer-brand-tag">Primer Gimnasio Temático · Argentina</span>
+        <p class="footer-desc">
+          Donde el deporte y la aviación se fusionan en una experiencia única. Entrenamos cuerpo, mente y espíritu con la disciplina de un piloto de élite.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          <a href="#" class="social-link" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Vuelos</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Tripulación</a></li>
+          <li><a href="planes.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+          <li><a href="ubicacion.html">Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Horarios</div>
+        <ul class="footer-links">
+          <li><a href="#">Lun–Vie: 06:00–23:00</a></li>
+          <li><a href="#">Sáb: 07:00–21:00</a></li>
+          <li><a href="#">Dom: 09:00–18:00</a></li>
+          <li><a href="#">Feriados: 09:00–14:00</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Zona de llegadas</div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📍</span>
+          <span class="fi-text">San Martín 456<br>Gral. Roca, Río Negro</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📞</span>
+          <span class="fi-text">+54 298 4XX-XXXX</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">✉</span>
+          <span class="fi-text">info@hangarfitness.ar</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2024 Hangar Fitness. Todos los derechos reservados.</span>
+      <span class="footer-code">VUELO HG-001 · ROC · RN ✈</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

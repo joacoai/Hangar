@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubicación — Hangar Fitness</title>
+  <meta name="description" content="Encontranos en San Martín 456, Gral. Roca, Río Negro. Instrucciones de vuelo para llegar al Hangar." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-icon">✈</span>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Hangar Fitness</span>
+      <span class="nav-brand-tag">Gral. Roca · RN</span>
+    </div>
+  </a>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="quienes-somos.html">Tripulación</a></li>
+    <li><a href="planes.html">Clases</a></li>
+    <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+    <li><a href="ubicacion.html" class="active">Ubicación</a></li>
+    <li><a href="contacto.html" class="nav-cta">Check-in ✈</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Ubicación</span>
+    </div>
+    <span class="section-label">&#9992; Coordenadas de llegada</span>
+    <h1 class="section-title">Cómo<br><span class="text-yellow">llegarnos</span></h1>
+    <div class="deco-line"></div>
+    <p class="section-sub">Instrucciones de vuelo para aterrizar en el Hangar. El hangar te espera abierto los 365 días del año.</p>
+  </div>
+  <div class="page-hero-deco">ROC</div>
+</section>
+
+<!-- ===== MAPA + INFO ===== -->
+<section class="section">
+  <div class="container">
+    <div class="two-col" style="gap:3rem;align-items:start;">
+
+      <!-- Info izquierda -->
+      <div>
+        <span class="section-label">&#9992; Torre de control</span>
+        <h2 class="section-title mb-2">El <span class="text-yellow">Hangar</span></h2>
+        <div class="deco-line"></div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;">
+          <div class="fi-item">
+            <div class="fi-step-num">📍</div>
+            <div>
+              <div class="fi-title">Dirección</div>
+              <div class="fi-desc">San Martín 456<br>Gral. Roca, Río Negro</div>
+            </div>
+          </div>
+          <div class="fi-item">
+            <div class="fi-step-num">🕐</div>
+            <div>
+              <div class="fi-title">Horarios de operación</div>
+              <div class="fi-desc">
+                Lunes a Viernes: 06:00 – 23:00 hs<br>
+                Sábados: 07:00 – 21:00 hs<br>
+                Domingos: 09:00 – 18:00 hs<br>
+                Feriados: 09:00 – 14:00 hs
+              </div>
+            </div>
+          </div>
+          <div class="fi-item">
+            <div class="fi-step-num">📞</div>
+            <div>
+              <div class="fi-title">Comunicación directa</div>
+              <div class="fi-desc">
+                Tel: +54 298 4XX-XXXX<br>
+                WhatsApp: +54 9 298 4XX-XXXX<br>
+                info@hangarfitness.ar
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <div class="info-box">
+            <span class="info-box-label">Coordenadas GPS</span>
+            <p>39°1'60"S 67°34'59"W<br><span style="color:rgba(255,255,255,0.4);font-size:0.82rem;">San Martín 456, Gral. Roca, Río Negro</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa derecha -->
+      <div>
+        <span class="section-label">&#9992; Mapa de ruta</span>
+        <div class="map-tactical mt-2">
+          <div class="map-tactical-header">
+            <span>&#9992; Mapa táctico · Gral. Roca · ROC</span>
+            <span>39°01'S &nbsp;67°34'W</span>
+          </div>
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-67.610%2C-39.045%2C-67.555%2C-39.015&layer=mapnik&marker=-39.033%2C-67.583"
+              title="Mapa Hangar Fitness - Gral. Roca, Río Negro"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="map-tactical-footer">
+            <span>Escala 1:50 000 · Zona Patagónica · RN-22</span>
+            <span style="color:var(--yellow);"><span class="blink">●</span> &nbsp;Activo</span>
+          </div>
+        </div>
+        <div class="mt-2" style="text-align:right;">
+          <a href="https://www.openstreetmap.org/?mlat=-39.033&mlon=-67.583#map=16/-39.033/-67.583"
+             target="_blank" rel="noopener"
+             style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,214,0,0.6);text-transform:uppercase;">
+            Ver mapa completo &#8594;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== HORARIOS DETALLE ===== -->
+<section class="section">
+  <div class="container" style="max-width:700px;">
+    <span class="section-label">&#9992; Ventana de aterrizaje</span>
+    <h2 class="section-title mb-3">Horarios de <span class="text-yellow">operación</span></h2>
+
+    <style>
+      .horario-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+      .horario-card {
+        background: var(--dark-2);
+        border: 1px solid rgba(255,214,0,0.15);
+        border-top: 3px solid var(--yellow);
+        padding: 1.5rem 1.25rem;
+        display: flex; flex-direction: column; gap: 0.5rem;
+      }
+      .horario-dia {
+        font-family: var(--font); font-weight: 700;
+        font-size: 1.05rem; text-transform: uppercase;
+        letter-spacing: 0.04em; color: var(--white);
+      }
+      .horario-rango {
+        font-family: var(--mono); font-size: 1.1rem;
+        font-weight: 700; color: var(--yellow);
+        letter-spacing: 0.06em;
+      }
+    </style>
+    <div class="horario-grid">
+      <div class="horario-card">
+        <div class="horario-dia">Lunes a Viernes</div>
+        <div class="horario-rango">06:00 — 23:00 hs</div>
+      </div>
+      <div class="horario-card">
+        <div class="horario-dia">Sábados</div>
+        <div class="horario-rango">07:00 — 21:00 hs</div>
+      </div>
+      <div class="horario-card">
+        <div class="horario-dia">Domingos</div>
+        <div class="horario-rango">09:00 — 18:00 hs</div>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="info-box">
+        <span class="info-box-label">Nota de la torre de control</span>
+        <p>Los horarios pueden modificarse en fechas especiales como Semana Santa, Navidad y Año Nuevo. Seguinos en redes o consultá a recepción para confirmación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <div class="container">
+    <span class="section-label">&#9992; Pista despejada</span>
+    <h2 class="section-title mb-2">¿Necesitás más info?</h2>
+    <p class="section-sub mb-3" style="margin:0 auto 2.5rem;text-align:center;">
+      Nuestro equipo en tierra está disponible para resolver todas tus consultas.
+    </p>
+    <a href="contacto.html" class="btn btn-dark">&#9992; &nbsp;Contactar ahora</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-brand-icon">✈</span>
+        <div class="footer-brand-name">Hangar Fitness</div>
+        <span class="footer-brand-tag">Primer Gimnasio Temático · Argentina</span>
+        <p class="footer-desc">
+          Donde el deporte y la aviación se fusionan en una experiencia única. Entrenamos cuerpo, mente y espíritu con la disciplina de un piloto de élite.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          <a href="#" class="social-link" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Vuelos</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Tripulación</a></li>
+          <li><a href="planes.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+          <li><a href="ubicacion.html">Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Horarios</div>
+        <ul class="footer-links">
+          <li><a href="#">Lun–Vie: 06:00–23:00</a></li>
+          <li><a href="#">Sáb: 07:00–21:00</a></li>
+          <li><a href="#">Dom: 09:00–18:00</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Zona de llegadas</div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📍</span>
+          <span class="fi-text">San Martín 456<br>Gral. Roca, Río Negro</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📞</span>
+          <span class="fi-text">+54 298 4XX-XXXX</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">✉</span>
+          <span class="fi-text">info@hangarfitness.ar</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2024 Hangar Fitness. Todos los derechos reservados.</span>
+      <span class="footer-code">VUELO HG-001 · ROC · RN ✈</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

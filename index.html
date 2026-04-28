@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangar Fitness — Primer Gimnasio Temático de Argentina</title>
+  <meta name="description" content="Hangar Fitness, el primer gimnasio temático aeroportuario de Argentina. Entrená diferente. Bienvenido a bordo." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-icon">✈</span>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Hangar Fitness</span>
+      <span class="nav-brand-tag">Gral. Roca · RN</span>
+    </div>
+  </a>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="quienes-somos.html">Tripulación</a></li>
+    <li><a href="planes.html">Clases</a></li>
+    <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+    <li><a href="ubicacion.html">Ubicación</a></li>
+    <li><a href="contacto.html" class="nav-cta">Check-in ✈</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+
+  <div class="container hero-content">
+    <div class="hero-eyebrow">VUELO HG-001 — GRAL. ROCA</div>
+    <div class="hero-badge">✈ &nbsp;PRIMER GIMNASIO TEMÁTICO DE ARGENTINA</div>
+    <h1 class="hero-title">
+      <span class="block-solid">Bienvenido</span>
+      <span class="block-yellow">a bordo</span>
+      <span class="block-outline">del cambio</span>
+    </h1>
+    <p class="hero-subtitle">
+      Donde el entrenamiento despega. Una experiencia única inspirada en la aviación, el rigor y la disciplina de los pilotos de élite.
+    </p>
+    <div class="hero-ctas">
+      <a href="planes.html" class="btn btn-primary">&#9992; &nbsp;Elegir mi vuelo</a>
+    </div>
+    <div class="hero-info-bar">
+      <div class="hib-item">
+        <span class="hib-label">Puerta</span>
+        <span class="hib-value">GATE A7</span>
+      </div>
+      <div class="hib-item">
+        <span class="hib-label">Estado</span>
+        <span class="hib-value">ABIERTO<span class="blink">_</span></span>
+      </div>
+      <div class="hib-item">
+        <span class="hib-label">Clases hoy</span>
+        <span class="hib-value">12 VUELOS</span>
+      </div>
+      <div class="hib-item">
+        <span class="hib-label">Altitud</span>
+        <span class="hib-value">SIN LÍMITE</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-deco">✈</div>
+</section>
+
+<!-- ===== SPONSORS ===== -->
+<div class="sponsors-bar">
+  <p class="sponsors-label">Sponsors y aliados estratégicos</p>
+  <div class="sponsors-list container">
+    <span class="sponsor">Adidas</span>
+    <span class="sponsor">Nike</span>
+    <span class="sponsor">Under Armour</span>
+    <span class="sponsor">Reebok</span>
+    <span class="sponsor">Garmin</span>
+  </div>
+</div>
+
+<!-- ===== BANNER PUBLICITARIO ROTATIVO ===== -->
+<div class="adbanner-wrap">
+
+  <!-- Radios ocultos — controlan navegación manual (CSS puro) -->
+  <input type="radio" name="banner" id="b1" class="banner-radio">
+  <input type="radio" name="banner" id="b2" class="banner-radio">
+  <input type="radio" name="banner" id="b3" class="banner-radio">
+  <input type="radio" name="banner" id="b4" class="banner-radio">
+  <input type="radio" name="banner" id="b5" class="banner-radio">
+
+  <!-- Slide 1 — Sala de máquinas + mural aviación (HANGAR) -->
+  <div class="adslide adslide--1">
+    <img src="assets/images/gym-aviation.png" alt="Sala de máquinas Hangar Fitness con mural aeronáutico" class="adslide-img" style="object-position:center 15%;" />
+  </div>
+
+  <!-- Slide 2 — Clase de entrenamiento -->
+  <div class="adslide adslide--2">
+    <img src="assets/images/gym-class.png" alt="Clase de entrenamiento funcional en Hangar Fitness" class="adslide-img" loading="lazy" style="object-position:center 20%;" />
+  </div>
+
+  <!-- Slide 3 — Rack de mancuernas / musculación -->
+  <div class="adslide adslide--3">
+    <img src="assets/images/gym-weights.png" alt="Sala de musculación con equipamiento de Hangar Fitness" class="adslide-img" loading="lazy" style="object-position:center 30%;" />
+  </div>
+
+  <!-- Slide 4 — Entrenamiento personal -->
+  <div class="adslide adslide--4">
+    <img src="assets/images/hero-right.png" alt="Entrenamiento personal con instructor en Hangar Fitness" class="adslide-img" loading="lazy" style="object-position:center 20%;" />
+  </div>
+
+  <!-- Slide 5 — Comunidad Hangar -->
+  <div class="adslide adslide--5">
+    <img src="assets/images/hero-left.png" alt="Comunidad Hangar Fitness — evento grupal" class="adslide-img" loading="lazy" style="object-position:center 10%;" />
+  </div>
+
+  <!-- Nav slide 1: prev→5 / next→2 -->
+  <div class="banner-nav banner-nav--1">
+    <label for="b5" class="banner-btn banner-prev" aria-label="Anterior">&#10094;</label>
+    <label for="b2" class="banner-btn banner-next" aria-label="Siguiente">&#10095;</label>
+  </div>
+  <!-- Nav slide 2: prev→1 / next→3 -->
+  <div class="banner-nav banner-nav--2">
+    <label for="b1" class="banner-btn banner-prev" aria-label="Anterior">&#10094;</label>
+    <label for="b3" class="banner-btn banner-next" aria-label="Siguiente">&#10095;</label>
+  </div>
+  <!-- Nav slide 3: prev→2 / next→4 -->
+  <div class="banner-nav banner-nav--3">
+    <label for="b2" class="banner-btn banner-prev" aria-label="Anterior">&#10094;</label>
+    <label for="b4" class="banner-btn banner-next" aria-label="Siguiente">&#10095;</label>
+  </div>
+  <!-- Nav slide 4: prev→3 / next→5 -->
+  <div class="banner-nav banner-nav--4">
+    <label for="b3" class="banner-btn banner-prev" aria-label="Anterior">&#10094;</label>
+    <label for="b5" class="banner-btn banner-next" aria-label="Siguiente">&#10095;</label>
+  </div>
+  <!-- Nav slide 5: prev→4 / next→1 (loop) -->
+  <div class="banner-nav banner-nav--5">
+    <label for="b4" class="banner-btn banner-prev" aria-label="Anterior">&#10094;</label>
+    <label for="b1" class="banner-btn banner-next" aria-label="Siguiente">&#10095;</label>
+  </div>
+
+  <!-- Dots -->
+  <div class="adslide-dots">
+    <label for="b1" class="addot addot--1" aria-label="Ir al anuncio 1"></label>
+    <label for="b2" class="addot addot--2" aria-label="Ir al anuncio 2"></label>
+    <label for="b3" class="addot addot--3" aria-label="Ir al anuncio 3"></label>
+    <label for="b4" class="addot addot--4" aria-label="Ir al anuncio 4"></label>
+    <label for="b5" class="addot addot--5" aria-label="Ir al anuncio 5"></label>
+  </div>
+
+</div>
+
+<!-- ===== CLASES — DESCRIPCION ===== -->
+<section class="section section--darker">
+  <div class="container">
+    <span class="section-label">&#9992; Disciplinas disponibles</span>
+    <h2 class="section-title">Nuestras <span class="text-yellow">clases</span></h2>
+    <div class="deco-line"></div>
+    <p class="section-sub" style="margin-bottom:2.5rem;">Cada clase diseñada para que despegues. Elegí la que más te llame y encontrá su horario abajo.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+
+      <div style="background:var(--dark-2);border:1px solid rgba(255,214,0,0.15);padding:1.5rem;transition:border-color .25s ease;" onmouseover="this.style.borderColor='rgba(255,214,0,0.6)'" onmouseout="this.style.borderColor='rgba(255,214,0,0.15)'">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🪂</div>
+        <div style="font-family:var(--font);font-weight:700;font-size:1.1rem;color:var(--yellow);margin-bottom:.4rem;">Bungee</div>
+        <div style="font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.5;">Entrenamiento suspendido en arnés elástico. Cardio, fuerza y diversión a la vez. Niveles A (avanzado) y P (principiante).</div>
+      </div>
+
+      <div style="background:var(--dark-2);border:1px solid rgba(255,214,0,0.15);padding:1.5rem;transition:border-color .25s ease;" onmouseover="this.style.borderColor='rgba(255,214,0,0.6)'" onmouseout="this.style.borderColor='rgba(255,214,0,0.15)'">
+        <div style="font-size:2rem;margin-bottom:.75rem;">💪</div>
+        <div style="font-family:var(--font);font-weight:700;font-size:1.1rem;color:var(--yellow);margin-bottom:.4rem;">Funcional / GAP / Power</div>
+        <div style="font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.5;">Circuitos de fuerza y resistencia. GAP trabaja glúteos, abdomen y piernas. Power es de alta intensidad.</div>
+      </div>
+
+      <div style="background:var(--dark-2);border:1px solid rgba(255,214,0,0.15);padding:1.5rem;transition:border-color .25s ease;" onmouseover="this.style.borderColor='rgba(255,214,0,0.6)'" onmouseout="this.style.borderColor='rgba(255,214,0,0.15)'">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🎭</div>
+        <div style="font-family:var(--font);font-weight:700;font-size:1.1rem;color:var(--yellow);margin-bottom:.4rem;">Pilates Aéreo</div>
+        <div style="font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.5;">Pilates clásico con tela aérea. Mejora la flexibilidad, postura y fuerza de core sin impacto articular.</div>
+      </div>
+
+      <div style="background:var(--dark-2);border:1px solid rgba(255,214,0,0.15);padding:1.5rem;transition:border-color .25s ease;" onmouseover="this.style.borderColor='rgba(255,214,0,0.6)'" onmouseout="this.style.borderColor='rgba(255,214,0,0.15)'">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🎵</div>
+        <div style="font-family:var(--font);font-weight:700;font-size:1.1rem;color:var(--yellow);margin-bottom:.4rem;">Zumba / Fight Do / Powerjump</div>
+        <div style="font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.5;">Cardio con ritmo. Zumba es baile latino, Fight Do combina artes marciales, Powerjump es mini-trampolín.</div>
+      </div>
+
+      <div style="background:var(--dark-2);border:1px solid rgba(255,214,0,0.15);padding:1.5rem;transition:border-color .25s ease;" onmouseover="this.style.borderColor='rgba(255,214,0,0.6)'" onmouseout="this.style.borderColor='rgba(255,214,0,0.15)'">
+        <div style="font-size:2rem;margin-bottom:.75rem;">👟</div>
+        <div style="font-family:var(--font);font-weight:700;font-size:1.1rem;color:var(--yellow);margin-bottom:.4rem;">Step</div>
+        <div style="font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.5;">Coreografías con plataforma de step. Tonifica piernas, mejora coordinación y quema calorías.</div>
+      </div>
+
+      <div style="background:var(--dark-2);border:1px solid rgba(255,214,0,0.15);padding:1.5rem;transition:border-color .25s ease;" onmouseover="this.style.borderColor='rgba(255,214,0,0.6)'" onmouseout="this.style.borderColor='rgba(255,214,0,0.15)'">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🚴</div>
+        <div style="font-family:var(--font);font-weight:700;font-size:1.1rem;color:var(--yellow);margin-bottom:.4rem;">Cycling Indoor</div>
+        <div style="font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.5;">Bicicleta fija en sala techada. Alta intensidad con música, ideal para cardio y pérdida de peso.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CALENDARIO SEMANAL ===== -->
+<section class="section section--dark">
+  <div class="container">
+    <span class="section-label">&#9992; Horarios de clases</span>
+    <h2 class="section-title">Calendario <span class="text-yellow">semanal</span></h2>
+    <div class="deco-line"></div>
+    <p class="section-sub">Seleccioná el día y encontrá tu clase.</p>
+
+    <!-- Leyenda de colores -->
+    <div class="sched-legend">
+      <span class="sched-legend-item"><span class="sched-dot sched-dot--bungee"></span>Bungee</span>
+      <span class="sched-legend-item"><span class="sched-dot sched-dot--funcional"></span>Funcional / GAP / Power</span>
+      <span class="sched-legend-item"><span class="sched-dot sched-dot--pilates"></span>Pilates Aéreo</span>
+      <span class="sched-legend-item"><span class="sched-dot sched-dot--cardio"></span>Zumba / Fight Do / Powerjump</span>
+      <span class="sched-legend-item"><span class="sched-dot sched-dot--step"></span>Step</span>
+    </div>
+
+    <!-- Radio tabs — CSS puro -->
+    <input type="radio" name="sched" id="s-lun" class="sched-radio" checked>
+    <input type="radio" name="sched" id="s-mar" class="sched-radio">
+    <input type="radio" name="sched" id="s-mie" class="sched-radio">
+    <input type="radio" name="sched" id="s-jue" class="sched-radio">
+    <input type="radio" name="sched" id="s-vie" class="sched-radio">
+    <input type="radio" name="sched" id="s-sab" class="sched-radio">
+    <input type="radio" name="sched" id="s-dom" class="sched-radio">
+
+    <div class="sched-wrap">
+
+      <!-- Tabs de días -->
+      <div class="sched-tabs" role="tablist">
+        <label for="s-lun" class="sched-tab sched-tab--lun" role="tab">
+          <span class="sched-tab-code">LUN</span>
+          <span class="sched-tab-name">Lunes</span>
+          <span class="sched-tab-count">10</span>
+        </label>
+        <label for="s-mar" class="sched-tab sched-tab--mar" role="tab">
+          <span class="sched-tab-code">MAR</span>
+          <span class="sched-tab-name">Martes</span>
+          <span class="sched-tab-count">8</span>
+        </label>
+        <label for="s-mie" class="sched-tab sched-tab--mie" role="tab">
+          <span class="sched-tab-code">MIÉ</span>
+          <span class="sched-tab-name">Miércoles</span>
+          <span class="sched-tab-count">10</span>
+        </label>
+        <label for="s-jue" class="sched-tab sched-tab--jue" role="tab">
+          <span class="sched-tab-code">JUE</span>
+          <span class="sched-tab-name">Jueves</span>
+          <span class="sched-tab-count">8</span>
+        </label>
+        <label for="s-vie" class="sched-tab sched-tab--vie" role="tab">
+          <span class="sched-tab-code">VIE</span>
+          <span class="sched-tab-name">Viernes</span>
+          <span class="sched-tab-count">10</span>
+        </label>
+        <label for="s-sab" class="sched-tab sched-tab--sab" role="tab">
+          <span class="sched-tab-code">SÁB</span>
+          <span class="sched-tab-name">Sábado</span>
+          <span class="sched-tab-count">—</span>
+        </label>
+        <label for="s-dom" class="sched-tab sched-tab--dom" role="tab">
+          <span class="sched-tab-code">DOM</span>
+          <span class="sched-tab-name">Domingo</span>
+          <span class="sched-tab-count">—</span>
+        </label>
+      </div>
+
+      <!-- Paneles -->
+      <div class="sched-panels">
+
+        <!-- LUNES -->
+        <div class="sched-panel sched-panel--lun">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">07:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(A)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">09:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(P)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">14:00</span><span class="sched-cls sched-cls--cardio">Zumba</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--funcional">GAP</span></div>
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">17:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(A)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">18:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(P)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--funcional">Power</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cardio">Powerjump</span></div>
+          </div>
+        </div>
+
+        <!-- MARTES -->
+        <div class="sched-panel sched-panel--mar">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--funcional">GAP</span></div>
+            <div class="sched-slot"><span class="sched-time">09:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">14:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--step">Step</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cardio">Zumba</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">21:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(I)</em></span></div>
+          </div>
+        </div>
+
+        <!-- MIÉRCOLES -->
+        <div class="sched-panel sched-panel--mie">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">07:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(A)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">09:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(P)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">14:00</span><span class="sched-cls sched-cls--cardio">Zumba</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--funcional">GAP</span></div>
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">17:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(A)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">18:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(P)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cardio">Fight Do</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cardio">Powerjump</span></div>
+          </div>
+        </div>
+
+        <!-- JUEVES -->
+        <div class="sched-panel sched-panel--jue">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--funcional">GAP</span></div>
+            <div class="sched-slot"><span class="sched-time">09:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">14:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--step">Step</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cardio">Zumba</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">21:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(I)</em></span></div>
+          </div>
+        </div>
+
+        <!-- VIERNES -->
+        <div class="sched-panel sched-panel--vie">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">07:00</span><span class="sched-cls sched-cls--funcional">Funcional</span></div>
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(A)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">09:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(P)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">14:00</span><span class="sched-cls sched-cls--cardio">Zumba</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--funcional">GAP</span></div>
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--pilates">Pilates Aéreo</span></div>
+            <div class="sched-slot"><span class="sched-time">17:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(A)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">18:00</span><span class="sched-cls sched-cls--bungee">Bungee <em>(P)</em></span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--funcional">Power</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cardio">Powerjump</span></div>
+          </div>
+        </div>
+
+        <!-- SÁBADO -->
+        <div class="sched-panel sched-panel--sab">
+          <div class="sched-weekend-msg">
+            <span class="sched-weekend-icon">✈</span>
+            <p class="sched-weekend-title">Horario de sábado</p>
+            <p class="sched-weekend-sub">Consultá los horarios de sábado directamente con el Hangar.</p>
+            <a href="contacto.html" class="btn btn-primary" style="margin-top:1.5rem;">&#9992; &nbsp;Consultar</a>
+          </div>
+        </div>
+
+        <!-- DOMINGO -->
+        <div class="sched-panel sched-panel--dom">
+          <div class="sched-weekend-msg">
+            <span class="sched-weekend-icon">✈</span>
+            <p class="sched-weekend-title">Horario de domingo</p>
+            <p class="sched-weekend-sub">Consultá los horarios de domingo directamente con el Hangar.</p>
+            <a href="contacto.html" class="btn btn-primary" style="margin-top:1.5rem;">&#9992; &nbsp;Consultar</a>
+          </div>
+        </div>
+
+      </div><!-- /sched-panels -->
+    </div><!-- /sched-wrap -->
+  </div>
+</section>
+
+<!-- ===== INDOOR ===== -->
+<section class="section section--darker">
+  <div class="container">
+    <span class="section-label">&#9992; Sala Indoor</span>
+    <h2 class="section-title">Horarios <span class="text-yellow">Indoor</span></h2>
+    <div class="deco-line"></div>
+    <p class="section-sub" style="margin-bottom:2rem;">Cycling disponible de lunes a sábado. Más disciplinas próximamente.</p>
+
+    <!-- Radio tabs indoor — CSS puro -->
+    <input type="radio" name="indoor" id="i-lun" class="sched-radio" checked>
+    <input type="radio" name="indoor" id="i-mar" class="sched-radio">
+    <input type="radio" name="indoor" id="i-mie" class="sched-radio">
+    <input type="radio" name="indoor" id="i-jue" class="sched-radio">
+    <input type="radio" name="indoor" id="i-vie" class="sched-radio">
+    <input type="radio" name="indoor" id="i-sab" class="sched-radio">
+
+    <div class="sched-wrap indoor-wrap">
+
+      <!-- Tabs -->
+      <div class="sched-tabs indoor-tabs" role="tablist">
+        <label for="i-lun" class="sched-tab indoor-tab--lun" role="tab">
+          <span class="sched-tab-code">LUN</span>
+          <span class="sched-tab-name">Lunes</span>
+        </label>
+        <label for="i-mar" class="sched-tab indoor-tab--mar" role="tab">
+          <span class="sched-tab-code">MAR</span>
+          <span class="sched-tab-name">Martes</span>
+        </label>
+        <label for="i-mie" class="sched-tab indoor-tab--mie" role="tab">
+          <span class="sched-tab-code">MIÉ</span>
+          <span class="sched-tab-name">Miércoles</span>
+        </label>
+        <label for="i-jue" class="sched-tab indoor-tab--jue" role="tab">
+          <span class="sched-tab-code">JUE</span>
+          <span class="sched-tab-name">Jueves</span>
+        </label>
+        <label for="i-vie" class="sched-tab indoor-tab--vie" role="tab">
+          <span class="sched-tab-code">VIE</span>
+          <span class="sched-tab-name">Viernes</span>
+        </label>
+        <label for="i-sab" class="sched-tab indoor-tab--sab" role="tab">
+          <span class="sched-tab-code">SÁB</span>
+          <span class="sched-tab-name">Sábado</span>
+        </label>
+      </div>
+
+      <!-- Paneles -->
+      <div class="sched-panels">
+
+        <!-- LUNES -->
+        <div class="sched-panel indoor-panel--lun">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">18:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+          </div>
+        </div>
+
+        <!-- MARTES -->
+        <div class="sched-panel indoor-panel--mar">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">21:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+          </div>
+        </div>
+
+        <!-- MIÉRCOLES -->
+        <div class="sched-panel indoor-panel--mie">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">14:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">18:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+          </div>
+        </div>
+
+        <!-- JUEVES -->
+        <div class="sched-panel indoor-panel--jue">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">08:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">15:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">21:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+          </div>
+        </div>
+
+        <!-- VIERNES -->
+        <div class="sched-panel indoor-panel--vie">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">16:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">19:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+            <div class="sched-slot"><span class="sched-time">20:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+          </div>
+        </div>
+
+        <!-- SÁBADO -->
+        <div class="sched-panel indoor-panel--sab">
+          <div class="sched-grid">
+            <div class="sched-slot"><span class="sched-time">09:00</span><span class="sched-cls sched-cls--cycling">Cycling</span></div>
+          </div>
+        </div>
+
+      </div><!-- /sched-panels -->
+    </div><!-- /indoor-wrap -->
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-number">+1200</span>
+        <span class="stat-label">Pasajeros activos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Clases semanales</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">12</span>
+        <span class="stat-label">Instructores élite</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">01</span>
+        <span class="stat-label">El primero en ARG</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO CARDS ===== -->
+<section class="section section--darker">
+  <div class="container">
+    <span class="section-label">&#9992; Torre de control</span>
+    <h2 class="section-title mb-3">Encontranos en el <span class="text-yellow">Hangar</span></h2>
+    <div class="deco-line"></div>
+
+    <style>
+      .info-duo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+      .info-duo-card {
+        background: var(--dark-2);
+        border: 1px solid rgba(255,214,0,0.18);
+        position: relative;
+        overflow: hidden;
+        padding: 2rem 1.75rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: border-color .25s ease;
+      }
+      .info-duo-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 4px; height: 100%;
+        background: var(--yellow);
+      }
+      .info-duo-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0; right: 0;
+        width: 60px; height: 60px;
+        background: rgba(255,214,0,0.05);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      }
+      .info-duo-card:hover { border-color: rgba(255,214,0,0.5); }
+      .info-duo-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .info-duo-icon {
+        font-size: 1.5rem;
+        background: var(--yellow);
+        width: 3rem; height: 3rem;
+        display: flex; align-items: center; justify-content: center;
+        clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+        flex-shrink: 0;
+      }
+      .info-duo-label {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--yellow);
+        opacity: 0.7;
+      }
+      .info-duo-title {
+        font-family: var(--font);
+        font-weight: 900;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--white);
+        line-height: 1.1;
+      }
+      .info-duo-body {
+        font-family: var(--mono);
+        font-size: 0.92rem;
+        color: rgba(255,255,255,0.55);
+        line-height: 1.8;
+        padding-left: 4rem;
+      }
+      .info-duo-body strong {
+        color: rgba(255,255,255,0.85);
+        font-weight: 600;
+      }
+      .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: 4rem;
+        margin-top: 0.25rem;
+        background: #25D366;
+        color: #000;
+        font-family: var(--font);
+        font-weight: 800;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.6rem 1.25rem;
+        text-decoration: none;
+        clip-path: polygon(0 0, 94% 0, 100% 100%, 0 100%);
+        transition: opacity .2s ease, transform .2s ease;
+        width: fit-content;
+      }
+      .btn-whatsapp:hover { opacity: 0.85; transform: translateX(3px); }
+    </style>
+
+    <div class="info-duo">
+      <div class="info-duo-card">
+        <div class="info-duo-header">
+          <div class="info-duo-icon">📍</div>
+          <div>
+            <div class="info-duo-label">Zona de llegadas</div>
+            <div class="info-duo-title">Dirección</div>
+          </div>
+        </div>
+        <div class="info-duo-body">
+          <strong>San Martín 456</strong><br>
+          Gral. Roca, Río Negro
+        </div>
+      </div>
+
+      <div class="info-duo-card">
+        <div class="info-duo-header">
+          <div class="info-duo-icon">📞</div>
+          <div>
+            <div class="info-duo-label">Canal directo</div>
+            <div class="info-duo-title">Comunicación</div>
+          </div>
+        </div>
+        <div class="info-duo-body">
+          Tel: +54 298 4XX-XXXX<br>
+          info@hangarfitness.ar
+        </div>
+        <a href="https://wa.me/5492984000000" target="_blank" rel="noopener" class="btn-whatsapp">
+          &#9992;&nbsp; Escribinos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HORARIOS DETALLE ===== -->
+<section class="section section--dark">
+  <div class="container">
+    <span class="section-label">&#9992; Ventana de aterrizaje</span>
+    <h2 class="section-title mb-3">Horarios de <span class="text-yellow">operación</span></h2>
+    <div class="deco-line"></div>
+
+    <style>
+      .horario-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+      .horario-card {
+        background: var(--dark-2);
+        border: 1px solid rgba(255,214,0,0.15);
+        border-top: 3px solid var(--yellow);
+        padding: 1.75rem 1.5rem;
+        display: flex; flex-direction: column; gap: 0.5rem;
+        transition: background .25s ease;
+      }
+      .horario-card:hover { background: rgba(255,214,0,0.04); }
+      .horario-dia {
+        font-family: var(--font); font-weight: 700;
+        font-size: 1.05rem; text-transform: uppercase;
+        letter-spacing: 0.04em; color: var(--white);
+      }
+      .horario-rango {
+        font-family: var(--mono); font-size: 1.2rem;
+        font-weight: 700; color: var(--yellow);
+        letter-spacing: 0.06em;
+      }
+    </style>
+    <div class="horario-grid">
+      <div class="horario-card">
+        <div class="horario-dia">Lunes a Viernes</div>
+        <div class="horario-rango">06:00 — 23:00 hs</div>
+      </div>
+      <div class="horario-card">
+        <div class="horario-dia">Sábados</div>
+        <div class="horario-rango">07:00 — 21:00 hs</div>
+      </div>
+      <div class="horario-card">
+        <div class="horario-dia">Domingos</div>
+        <div class="horario-rango">09:00 — 18:00 hs</div>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="info-box">
+        <span class="info-box-label">Nota de la torre de control</span>
+        <p>Los horarios pueden modificarse en fechas especiales como Semana Santa, Navidad y Año Nuevo. Seguinos en redes o consultá a recepción para confirmación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band">
+  <div class="container">
+    <span class="section-label">&#9992; Abordaje disponible</span>
+    <h2 class="section-title mb-2">¿Listo para despegar?</h2>
+    <p class="section-sub mb-3" style="margin:0 auto 2.5rem; text-align:center;">
+      Elegí tu clase, reservá tu lugar y subí a bordo. El cambio comienza en la pista de despegue.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contacto.html" class="btn btn-dark">&#9992; &nbsp;Contactar ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-brand-icon">✈</span>
+        <div class="footer-brand-name">Hangar Fitness</div>
+        <span class="footer-brand-tag">Primer Gimnasio Temático · Argentina</span>
+        <p class="footer-desc">
+          Donde el deporte y la aviación se fusionan en una experiencia única. Entrenamos cuerpo, mente y espíritu con la disciplina de un piloto de élite.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          <a href="#" class="social-link" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Vuelos</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Tripulación</a></li>
+          <li><a href="planes.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="galeria.html">Bitácora</a></li>
+          <li><a href="ubicacion.html">Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Horarios</div>
+        <ul class="footer-links">
+          <li><a href="#">Lun–Vie: 06:00–23:00</a></li>
+          <li><a href="#">Sáb: 07:00–21:00</a></li>
+          <li><a href="#">Dom: 09:00–18:00</a></li>
+          <li><a href="#">Feriados: 09:00–14:00</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Zona de llegadas</div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📍</span>
+          <span class="fi-text">San Martín 456<br>Gral. Roca, Río Negro</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">📞</span>
+          <span class="fi-text">+54 298 4XX-XXXX</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fi-icon">✉</span>
+          <span class="fi-text">info@hangarfitness.ar</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2024 Hangar Fitness. Todos los derechos reservados.</span>
+      <span class="footer-code">VUELO HG-001 · ROC · RN ✈</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
